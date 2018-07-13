@@ -134,7 +134,7 @@ void my_des_cbc_encrypt(unsigned char *input, unsigned char *output, long length
       l2c(out0, output);
       l2c(out1, output);
       
-//     fprintf(stderr,"out:%s\n",output);
+//     printf("out:%s\n",output);
   }
 }
 
@@ -185,8 +185,7 @@ int main(int argc, char *argv[])
     unsigned char* bla = (unsigned char*)inputtext;
     length = strlen((char*)bla);
     
-    outputtext = malloc(length*sizeof(unsigned char*));//Get size;
-    
+    outputtext = malloc(length * sizeof(unsigned char*));//Get size;
     my_des_cbc_encrypt( (unsigned char*)inputtext, (unsigned char*)outputtext,
                        length, key, &iv, ENC);
     /*
@@ -199,14 +198,15 @@ int main(int argc, char *argv[])
       des_cbc_encrypt();
       
     */
-    outputtext2 = malloc(length*sizeof(unsigned char*));//get size;
+    outputtext2 = malloc(length * sizeof(unsigned char*));//Get size;
     des_cbc_encrypt( (unsigned char*)inputtext, (unsigned char*)outputtext2,
                        length, key, &iv, ENC);
     
     /*
      Print out ciphertexts from  my_des_cbc_encrypt() and  des_cbc_encrypt() to compare
     */
-    fprintf(stderr,"from my_des_cbc_encrypt: %s\n", outputtext);
-    fprintf(stderr,"from des_cbc_encrypt:    %s\n", outputtext2);
+//    printf("aaa %s",inputtext);
+    printf("from my_des_cbc_encrypt: %s\n", outputtext);
+    printf("from des_cbc_encrypt:    %s\n", outputtext2);
     return 0;
 }
