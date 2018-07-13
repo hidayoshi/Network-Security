@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     */
     gettimeofday(&t_start, 0);
     
-    if((outlen = RSA_public_encrypt(strlen((char*)rbuff), rbuff, wbuff,                                 key, RSA_PKCS1_PADDING)) == -1)
+    if((outlen = RSA_public_encrypt(strlen((char*)rbuff), rbuff, wbuff, key, RSA_PKCS1_PADDING)) == -1)
                 {
                   exit(-1);
                 }
